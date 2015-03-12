@@ -1,0 +1,5 @@
+name: SpellingCorrection
+main: bl4ckscor3.plugin.spellingcorrection.core.SpellingCorrection
+version: 1.0
+author: bl4ckscor3
+description: Corrects your spelling.
