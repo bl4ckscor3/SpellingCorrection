@@ -90,9 +90,11 @@ public class AsyncPlayerChatAndQuitListener implements Listener
 		messages.put(userToCorrect, correctedMessage);
 
 		if(correctsDifferentUser)
-			sendMessage(userToCorrect + " was corrected by " + event.getPlayer().getName() + " and " + ChatColor.BOLD + "meant " + ChatColor.BOLD + "to say: " + correctedMessage);
+			sendMessage(userToCorrect + " was corrected by " + event.getPlayer().getName() + " and " + ChatColor.BOLD + "meant " + ChatColor.RESET + "to say: " + correctedMessage);
 		else
-			sendMessage(userToCorrect + ChatColor.BOLD + " meant " + ChatColor.BOLD + "to say: " + correctedMessage);
+			sendMessage(userToCorrect + ChatColor.BOLD + " meant " + ChatColor.RESET + "to say: " + correctedMessage);
+		
+		event.setCancelled(true);
 	}
 
 	private static void sendMessage(String message)
