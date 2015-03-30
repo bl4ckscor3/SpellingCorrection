@@ -11,6 +11,8 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
+import bl4ckscor3.plugin.bl4ckkitCore.core.bl4ckkitCore;
+
 public class AsyncPlayerChatAndQuitListener implements Listener
 {
 	private static HashMap<String, String> messages = new HashMap<String, String>();
@@ -101,7 +103,7 @@ public class AsyncPlayerChatAndQuitListener implements Listener
 	{
 		for(Player p : Bukkit.getOnlinePlayers())
 		{
-			p.sendMessage("[" + ChatColor.BLUE + plugin.getDescription().getName() + ChatColor.RESET + "] " + message);
+			bl4ckkitCore.getMessageManager().sendChatMessage(p, plugin, message);
 		}
 	}
 }

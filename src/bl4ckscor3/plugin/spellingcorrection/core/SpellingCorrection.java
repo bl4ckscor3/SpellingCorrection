@@ -2,6 +2,7 @@ package bl4ckscor3.plugin.spellingcorrection.core;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import bl4ckscor3.plugin.bl4ckkitCore.core.bl4ckkitCore;
 import bl4ckscor3.plugin.spellingcorrection.listener.AsyncPlayerChatAndQuitListener;
 
 public class SpellingCorrection extends JavaPlugin
@@ -10,12 +11,12 @@ public class SpellingCorrection extends JavaPlugin
 	public void onEnable()
 	{
 		getServer().getPluginManager().registerEvents(new AsyncPlayerChatAndQuitListener(this), this);
-		System.out.println("[" + getDescription().getName() + "] v " + getDescription().getVersion() + " enabled.");
+		bl4ckkitCore.getMessageManager().sendEnabledMessage(this);
 	}
 
 	@Override
 	public void onDisable()
 	{
-		System.out.println("[" + getDescription().getName() + "] v " + getDescription().getVersion() + " disabled.");
+		bl4ckkitCore.getMessageManager().sendDisabledMessage(this);
 	}
 }
