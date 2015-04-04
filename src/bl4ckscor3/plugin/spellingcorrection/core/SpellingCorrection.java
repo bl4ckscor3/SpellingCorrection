@@ -11,12 +11,14 @@ public class SpellingCorrection extends JavaPlugin
 	public void onEnable()
 	{
 		getServer().getPluginManager().registerEvents(new AsyncPlayerChatAndQuitListener(this), this);
+		bl4ckkitCore.registerPlugin(this);
 		bl4ckkitCore.getMessageManager().sendEnabledMessage(this);
 	}
 
 	@Override
 	public void onDisable()
 	{
+		bl4ckkitCore.unregisterPlugin(this);
 		bl4ckkitCore.getMessageManager().sendDisabledMessage(this);
 	}
 }
